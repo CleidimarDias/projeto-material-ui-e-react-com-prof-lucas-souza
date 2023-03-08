@@ -1,7 +1,7 @@
 
 import { BrowserRouter } from 'react-router-dom'
 import { AppRouts } from './routs'
-import { AppThemeProvider } from './contexts';
+import { AppThemeProvider, DrawerProvider } from './contexts';
 import { MenuLateral } from './components/menu-lateral';
 
 
@@ -12,12 +12,13 @@ function App() {
 
   return (
     <AppThemeProvider>
-      < BrowserRouter>
-        <MenuLateral>
-          <AppRouts />
-        </MenuLateral>
-
-      </BrowserRouter>
+      <DrawerProvider>
+        < BrowserRouter>
+          <MenuLateral>
+            <AppRouts />
+          </MenuLateral>
+        </BrowserRouter>
+      </DrawerProvider>
     </AppThemeProvider>
 
 
